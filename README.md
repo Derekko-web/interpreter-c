@@ -1,50 +1,34 @@
-[![progress-banner](https://backend.codecrafters.io/progress/interpreter/6a814093-18e5-42bf-bf55-64da62bc3fea)](https://app.codecrafters.io/users/Derekko-web?r=2qF)
+# Interpreter in C
 
-This is a starting point for C solutions to the
-["Build your own Interpreter" Challenge](https://app.codecrafters.io/courses/interpreter/overview).
+Maintained by **Derek Ko**.
 
-This challenge follows the book
-[Crafting Interpreters](https://craftinginterpreters.com/) by Robert Nystrom.
+A tree-walk interpreter for the Lox language, implemented in C. It includes
+lexical analysis, recursive-descent parsing, lexical scope resolution, and
+runtime evaluation.
 
-In this challenge you'll build an interpreter for
-[Lox](https://craftinginterpreters.com/the-lox-language.html), a simple
-scripting language. Along the way, you'll learn about tokenization, ASTs,
-tree-walk interpreters and more.
+## Features
 
-Before starting this challenge, make sure you've read the "Welcome" part of the
-book that contains these chapters:
+- Expressions, variables, conditionals, and loops
+- Functions, closures, and return values
+- Classes, instances, inheritance, `this`, and `super`
+- Separate commands for tokenizing, parsing, evaluating, and running programs
 
-- [Introduction](https://craftinginterpreters.com/introduction.html) (chapter 1)
-- [A Map of the Territory](https://craftinginterpreters.com/a-map-of-the-territory.html)
-  (chapter 2)
-- [The Lox Language](https://craftinginterpreters.com/the-lox-language.html)
-  (chapter 3)
+## Build and run
 
-These chapters don't involve writing code, so they won't be covered in this
-challenge. This challenge will start from chapter 4,
-[Scanning](https://craftinginterpreters.com/scanning.html).
-
-**Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to try the challenge.
-
-# Passing the first stage
-
-The entry point for your program is in `src/main.c`. Study and uncomment the
-relevant code, and push your changes to pass the first stage:
+Requires CMake 3.13+ and a C compiler with C23 support.
 
 ```sh
-git commit -am "pass 1st stage" # any msg
-git push origin master
+./your_program.sh run demo.lox
+./your_program.sh tokenize demo.lox
 ```
 
-Time to move on to the next stage!
+For a direct build:
 
-# Stage 2 & beyond
+```sh
+cmake -S . -B build-local
+cmake --build build-local
+./build-local/interpreter run demo.lox
+```
 
-Note: This section is for stages 2 and beyond.
-
-1. Ensure you have `cmake` installed locally
-2. Run `./your_program.sh` to run your program, which is implemented in
-   `src/main.c`.
-3. Commit your changes and run `git push origin master` to submit your solution
-   to CodeCrafters. Test output will be streamed to your terminal.
+This is an experimental language implementation. The source currently lives
+in `src/main.c`.
