@@ -1,1 +1,19 @@
-!(false == true) == ((3 + 4) * (10 - 6) > 20)
+fun makeCounter() {
+  var count = 0;
+  fun increment() {
+    count = count + 1;
+    return count;
+  }
+  return increment;
+}
+var counter = makeCounter();
+print counter();
+print counter();
+
+class Project {
+  name() { return "Derek Ko"; }
+}
+class Interpreter < Project {
+  name() { return super.name() + ": interpreter-c"; }
+}
+print Interpreter().name();
